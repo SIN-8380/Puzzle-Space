@@ -30,10 +30,10 @@ const puzzlesData = [
   },
   {
     id: "3",
-    title: "Classic Oil Painting",
+    title: "Joker Oil Painting",
     category: "art",
     image:"images/fineart.jpg",
-    url: "https://jigex.com/J73tUG",
+    url: "https://jigex.com/nbvwxb",
     author: "Unsplash / Art Gallery",
     license: "Free to use",
   },
