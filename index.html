@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Space - Interactive Jigsaw Catalog</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon CDN (Line Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+   
+</head>
+
+<body
+    class="bg-slate-100 dark:bg-slate-950 font-sans antialiased text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+    <!-- Responsive Navigation Header -->
+    <header
+        class="w-full py-3.5 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-6">
+
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-2.5 shrink-0">
+                <div
+                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-bold text-lg sm:text-xl shadow-sm">
+                    <i class="ri-puzzle-line"></i>
+                </div>
+                <span class="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">Puzzle
+                    Space</span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-xs sm:max-w-sm md:max-w-md">
+                <div class="relative w-full">
+                    <i
+                        class="ri-search-line absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs sm:text-sm"></i>
+                    <input type="text" id="searchInput" placeholder="Search puzzles..."
+                        class="w-full pl-8 sm:pl-9 pr-3 sm:pr-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-slate-200/60 dark:bg-slate-800/80 border border-transparent dark:border-slate-700/50 rounded-full text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-indigo-500/50 transition-all" />
+                </div>
+            </div>
+
+            <!-- Controls Right -->
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="themeToggle" type="button" aria-label="Toggle theme"
+                    class="p-2 sm:p-2.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200 flex items-center justify-center">
+                    <i id="sunIcon" class="ri-sun-line text-base sm:text-lg hidden"></i>
+                    <i id="moonIcon" class="ri-moon-line text-base sm:text-lg"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Catalog Container -->
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-8 flex-grow">
+
+        <!-- Horizontally Scrollable Responsive Category Pills -->
+        <section class="mb-6 sm:mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="categoryNav">
+                <button data-category="all"
+                    class="category-btn active px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm shrink-0">
+                    <i class="ri-apps-line"></i> All Puzzles
+                </button>
+                <button data-category="nature"
+                    class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200/60 dark:hover:bg-slate-800 shrink-0">
+                    <i class="ri-landscape-line"></i> Nature & Scenery
+                </button>
+                <button data-category="art"
+                    class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200/60 dark:hover:bg-slate-800 shrink-0">
+                    <i class="ri-palette-line"></i> Fine Art
+                </button>
+                <button data-category="architecture"
+                    class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200/60 dark:hover:bg-slate-800 shrink-0">
+                    <i class="ri-building-line"></i> Architecture
+                </button>
+                <button data-category="animals"
+                    class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200/60 dark:hover:bg-slate-800 shrink-0">
+                    <i class="ri-bear-smile-line"></i> Wildlife
+                </button>
+                <button data-category="abstract"
+                    class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-200/60 dark:hover:bg-slate-800 shrink-0">
+                    <i class="ri-shapes-line"></i> Abstract
+                </button>
+            </div>
+        </section>
+
+        <!-- Toolbar Header -->
+        <div class="flex items-center justify-between gap-3 mb-5 sm:mb-6">
+            <div class="flex items-center gap-2">
+                <h1 id="sectionTitle"
+                    class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    All Puzzles
+                </h1>
+                <span id="puzzleCountBadge"
+                    class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                    6
+                </span>
+            </div>
+        </div>
+
+        <!-- Fully Responsive Puzzle Cards Grid -->
+        <div id="puzzleGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Dynamic cards rendered via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden py-12 sm:py-16 text-center space-y-3">
+            <div
+                class="w-12 h-12 bg-slate-200 dark:bg-slate-800 text-slate-400 rounded-full flex items-center justify-center mx-auto text-xl">
+                <i class="ri-search-eye-line"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">No puzzles found</h3>
+            <p class="text-slate-500 text-xs max-w-xs mx-auto">There are no puzzles available under this category or
+                search filter.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-6 text-center text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200/60 dark:border-slate-800/80 mt-8 sm:mt-12 bg-white dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 space-y-1">
+            <p>© 2026 Puzzle Space Catalog. Created by <span
+                    class="font-semibold text-slate-700 dark:text-slate-200">LAW</span>.</p>
+            <p>Powered by <a href="https://www.jigsawexplorer.com" target="_blank" rel="noopener noreferrer"
+                    class="hover:underline text-indigo-600 dark:text-indigo-400 font-medium">JigsawExplorer.com</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
