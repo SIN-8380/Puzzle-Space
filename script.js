@@ -62,6 +62,7 @@ const puzzlesData = [
     category: "abstract",
     image:
       "images/abstract2.jpg",
+    url: "https://jigex.com/KU8zS2",
     author: "Unsplash / BERTRY Nicole",
     license: "Free to use under the Unsplash License",
   },
