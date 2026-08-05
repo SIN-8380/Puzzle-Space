@@ -20,7 +20,7 @@ const puzzlesData = [
     license: "Personal Collection",
   },
   {
-    id: "2",
+    id: "7",
     title: "Lion Lotus Flower",
     category: "nature",
     image: "images/nature1.jpg",
@@ -30,10 +30,10 @@ const puzzlesData = [
   },
   {
     id: "3",
-    title: "Joker Oil Painting",
+    title: "Classic Oil Painting",
     category: "art",
-    image:"images/fineart.jpg",
-    url: "https://jigex.com/nbvwxb",
+    image: "images/fineart.jpg",
+    url: "https://jigex.com/J73tUG",
     author: "Unsplash / Art Gallery",
     license: "Free to use",
   },
@@ -58,12 +58,20 @@ const puzzlesData = [
   },
   {
     id: "6",
-    title: "Geometric Neon Flow",
+    title: "Abstract Painting",
     category: "abstract",
     image:
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-    url: "https://jigex.com/J73tUG",
-    author: "Unsplash / Abstract",
+      "images/abstract2.jpg",
+    author: "Unsplash / BERTRY Nicole",
+    license: "Free to use under the Unsplash License",
+  },
+  {
+    id: "8",
+    title: "Serene Landscape ",
+    category: "nature",
+    image: "images/nature2.jpg",
+    url: "https://jigex.com/mBuY9Z",
+    author: "Pexels / kien virak",
     license: "Free to use",
   },
 ];
