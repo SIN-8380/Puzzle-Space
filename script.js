@@ -37,14 +37,13 @@ const puzzlesData = [
     author: "Unsplash / Art Gallery",
     license: "Free to use",
   },
-  {
+ {
     id: "4",
     title: "Gothic Cathedral Tower",
     category: "architecture",
-    image:
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-    url: "https://jigex.com/J73tUG",
-    author: "Unsplash / Architecture",
+    image: "images/Architecture.jpg",
+    url: "https://jigex.com/nPut69",
+    author: "Pexels / Mehmet Turgut Kirkgoz",
     license: "Free to use",
   },
   {
