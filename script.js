@@ -65,6 +65,15 @@ const puzzlesData = [
     author: "Unsplash / BERTRY Nicole",
     license: "Free to use under the Unsplash License",
   },
+   {
+    id: "9",
+    title: "Ponyo",
+    category: "art",
+    image: "images/img.jpg",
+    url: "https://jigex.com/mBuY9Z",
+    author: "wallpapercat",
+    license: "Free to use",
+  },
   {
     id: "8",
     title: "Serene Landscape ",
