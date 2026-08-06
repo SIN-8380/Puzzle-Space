@@ -70,7 +70,7 @@ const puzzlesData = [
     title: "Ponyo",
     category: "art",
     image: "images/img.jpg",
-    url: "https://jigex.com/mBuY9Z",
+    url: "https://jigex.com/TT3iqS",
     author: "wallpapercat",
     license: "Free to use",
   },
