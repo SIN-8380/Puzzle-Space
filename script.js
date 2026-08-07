@@ -1,5 +1,4 @@
 
-
 // Catalog Data with Image Credits
 const puzzlesData = [
   {
@@ -25,7 +24,7 @@ const puzzlesData = [
     title: "Classic Oil Painting",
     category: "art",
     image: "images/fineart.jpg",
-    url: "https://jigex.com/J73tUG",
+    url: "https://jigex.com/nbvwxb",
     author: "Unsplash / Art Gallery",
     license: "Free to use",
   },
@@ -116,7 +115,7 @@ const puzzlesData = [
     title: "Ponyo",
     category: "art",
     image: "images/img.jpg",
-    url: "https://jigex.com/mBuY9Z",
+    url: "https://jigex.com/TT3iqS",
     author: "wallpapercat",
     license: "Free to use",
   },
@@ -125,6 +124,7 @@ const puzzlesData = [
     title: "Abstract Painting",
     category: "abstract",
     image: "images/abstract2.jpg",
+    url: "https://jigex.com/KU8zS2",
     author: "Unsplash / BERTRY Nicole",
     license: "Free to use under the Unsplash License",
   },
