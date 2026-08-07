@@ -1,5 +1,37 @@
+// Disable right-click context menu
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  return false;
+});
 
-
+// Disable keyboard shortcuts for developer tools and other common shortcuts
+document.addEventListener("keydown", function (e) {
+  // Disable F12 (Developer Tools)
+  if (e.key === "F12") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+Shift+I (Developer Tools)
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+Shift+J (Console)
+  if (e.ctrlKey && e.shiftKey && e.key === "J") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+U (View Source)
+  if (e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+S (Save)
+  if (e.ctrlKey && e.key === "s") {
+    e.preventDefault();
+    return false;
+  }
+});
 
 // Catalog Data with Image Credits
 const puzzlesData = [
@@ -17,7 +49,7 @@ const puzzlesData = [
     title: "Lion",
     category: "animals",
     image: "images/animal1.jpg",
-    url: "https://jigex.com/J73tUG",
+    url: "https://jigex.com/QusyW1",
     author: "Unsplash / Ingo Stiller",
     license: "Free to use",
   },
