@@ -1,31 +1,57 @@
+// Disable right-click context menu
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  return false;
+});
+
+// Disable keyboard shortcuts for developer tools and other common shortcuts
+document.addEventListener("keydown", function (e) {
+  // Disable F12 (Developer Tools)
+  if (e.key === "F12") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+Shift+I (Developer Tools)
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+Shift+J (Console)
+  if (e.ctrlKey && e.shiftKey && e.key === "J") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+U (View Source)
+  if (e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+    return false;
+  }
+  // Disable Ctrl+S (Save)
+  if (e.ctrlKey && e.key === "s") {
+    e.preventDefault();
+    return false;
+  }
+});
+
+
 // Catalog Data with Image Credits
 const puzzlesData = [
   {
-    id: "1",
-    title: "Cat",
-    category: "abstract",
-    image: "images/cat.jpg",
+    id: "10",
+    title: "Totoro",
+    category: "art",
+    image: "images/anime1.jpg",
+    url: "https://jigex.com/z5jgVK",
+    author: "wallpaperaccess",
+    license: "Free to use",
+  },
+  {
+    id: "14",
+    title: "Lion",
+    category: "animals",
+    image: "images/animal1.jpg",
     url: "https://jigex.com/J73tUG",
-    author: "Local Asset",
-    license: "Personal Collection",
-  },
-  {
-    id: "2",
-    title:
-      "Vibrant abstract expressionist art with bold colors and dynamic brush strokes.",
-    category: "abstract",
-    image: "images/abstract1.jpg",
-    url: "https://jigex.com/iq5YQX",
-    author: "Steve A Johnson",
-    license: "Personal Collection",
-  },
-  {
-    id: "7",
-    title: "Lion Lotus Flower",
-    category: "nature",
-    image: "images/nature1.jpg",
-    url: "https://jigex.com/7wWr9E",
-    author: "Unsplash / Forest Collection",
+    author: "Unsplash / Ingo Stiller",
     license: "Free to use",
   },
   {
@@ -37,13 +63,31 @@ const puzzlesData = [
     author: "Unsplash / Art Gallery",
     license: "Free to use",
   },
- {
-    id: "4",
-    title: "Gothic Cathedral Tower",
-    category: "architecture",
-    image: "images/Architecture.jpg",
-    url: "https://jigex.com/nPut69",
-    author: "Pexels / Mehmet Turgut Kirkgoz",
+  {
+    id: "12",
+    title: "Cat Painting",
+    category: "art",
+    image: "images/cat2.jpg",
+    url: "https://jigex.com/96jPsu",
+    author: "pixelstalk",
+    license: "Free to use",
+  },
+  {
+    id: "1",
+    title: "Cat",
+    category: "abstract",
+    image: "images/cat.jpg",
+    url: "https://jigex.com/J73tUG",
+    author: "Local Asset",
+    license: "Personal Collection",
+  },
+  {
+    id: "8",
+    title: "Serene Landscape ",
+    category: "nature",
+    image: "images/nature2.jpg",
+    url: "https://jigex.com/mBuY9Z",
+    author: "Pexels / kien virak",
     license: "Free to use",
   },
   {
@@ -56,32 +100,67 @@ const puzzlesData = [
     license: "Free to use",
   },
   {
-    id: "6",
-    title: "Abstract Painting",
-    category: "abstract",
-    image:
-      "images/abstract2.jpg",
-    url: "https://jigex.com/KU8zS2",
-    author: "Unsplash / BERTRY Nicole",
-    license: "Free to use under the Unsplash License",
+    id: "13",
+    title: "Cat Painting 2",
+    category: "art",
+    image: "images/cat3.jpg",
+    url: "https://jigex.com/mQtPYx",
+    author: "pixelstalk",
+    license: "Free to use",
   },
-   {
+  {
+    id: "2",
+    title:
+      "Vibrant abstract expressionist art with bold colors and dynamic brush strokes.",
+    category: "abstract",
+    image: "images/abstract1.jpg",
+    url: "https://jigex.com/iq5YQX",
+    author: "Steve A Johnson",
+    license: "Personal Collection",
+  },
+  {
+    id: "11",
+    title: "Black Orange",
+    category: "art",
+    image: "images/cat1.jpg",
+    url: "https://jigex.com/B1cpy1",
+    author: "pixelstalk",
+    license: "Free to use",
+  },
+  {
+    id: "7",
+    title: "Lion Lotus Flower",
+    category: "nature",
+    image: "images/nature1.jpg",
+    url: "https://jigex.com/7wWr9E",
+    author: "Unsplash / Forest Collection",
+    license: "Free to use",
+  },
+  {
+    id: "4",
+    title: "Gothic Cathedral Tower",
+    category: "architecture",
+    image: "images/Architecture.jpg",
+    url: "https://jigex.com/nPut69",
+    author: "Pexels / Mehmet Turgut Kirkgoz",
+    license: "Free to use",
+  },
+  {
     id: "9",
     title: "Ponyo",
     category: "art",
     image: "images/img.jpg",
-    url: "https://jigex.com/TT3iqS",
+    url: "https://jigex.com/mBuY9Z",
     author: "wallpapercat",
     license: "Free to use",
   },
   {
-    id: "8",
-    title: "Serene Landscape ",
-    category: "nature",
-    image: "images/nature2.jpg",
-    url: "https://jigex.com/mBuY9Z",
-    author: "Pexels / kien virak",
-    license: "Free to use",
+    id: "6",
+    title: "Abstract Painting",
+    category: "abstract",
+    image: "images/abstract2.jpg",
+    author: "Unsplash / BERTRY Nicole",
+    license: "Free to use under the Unsplash License",
   },
 ];
 
